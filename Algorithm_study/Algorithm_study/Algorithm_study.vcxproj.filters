@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Dynamic programming">
+      <UniqueIdentifier>{911b2e8f-3cec-4a4d-a54d-a1cde7c08f35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\etc">
+      <UniqueIdentifier>{445946e8-262e-4ae9-9969-bbfcfc520ec6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Stack,Queue,Deque">
+      <UniqueIdentifier>{1752b4ec-86c8-4076-bf8b-e74313d34f78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\math">
+      <UniqueIdentifier>{1fe30c9f-b76e-4968-aca0-48af27d0b890}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\sort">
+      <UniqueIdentifier>{c455a986-25e1-42cd-a928-3b4e2697ca8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\문자열 매칭">
+      <UniqueIdentifier>{e9dc40b6-ef24-40c2-bf3c-e2dcc3299688}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\graph">
+      <UniqueIdentifier>{074a44eb-aa77-41c2-9034-f1c0a4e57c19}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="1003_피보나치 함수_bottom up.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="1003_피보나치 함수_top down.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="1463_1로 만들기_bottom up.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="1463_1로 만들기_top down.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="10845_큐.cpp">
+      <Filter>소스 파일\Stack,Queue,Deque</Filter>
+    </ClCompile>
+    <ClCompile Include="10820_문자열 분석.cpp">
+      <Filter>소스 파일\etc</Filter>
+    </ClCompile>
+    <ClCompile Include="2965_캥거루 세마리.cpp">
+      <Filter>소스 파일\etc</Filter>
+    </ClCompile>
+    <ClCompile Include="1158_조세퍼스 문제.cpp">
+      <Filter>소스 파일\Stack,Queue,Deque</Filter>
+    </ClCompile>
+    <ClCompile Include="11726_2xN 타일링_bottom up.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="11726_2xN 타일링_top down.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="11727_2xN 타일링 2.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="1406_에디터.cpp">
+      <Filter>소스 파일\Stack,Queue,Deque</Filter>
+    </ClCompile>
+    <ClCompile Include="9012_괄호.cpp">
+      <Filter>소스 파일\Stack,Queue,Deque</Filter>
+    </ClCompile>
+    <ClCompile Include="10828_스택1.cpp">
+      <Filter>소스 파일\Stack,Queue,Deque</Filter>
+    </ClCompile>
+    <ClCompile Include="10828_스택2.cpp">
+      <Filter>소스 파일\Stack,Queue,Deque</Filter>
+    </ClCompile>
+    <ClCompile Include="10866_덱.cpp">
+      <Filter>소스 파일\Stack,Queue,Deque</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>소스 파일\etc</Filter>
+    </ClCompile>
+    <ClCompile Include="10951_A+B-4_입력 끝.cpp">
+      <Filter>소스 파일\etc</Filter>
+    </ClCompile>
+    <ClCompile Include="5397_키로거.cpp">
+      <Filter>소스 파일\Stack,Queue,Deque</Filter>
+    </ClCompile>
+    <ClCompile Include="9095_1,2,3 더하기.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="11052_붕어빵 판매하기.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="10844_쉬운 계단 수.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="11057_오르막 수.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="2193_이친수.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="9465_스티커.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="2156_포도주 시식.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="11053_가장 긴 증가하는 부분 수열.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="11722_가장 긴 감소하는 부분 수열.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="11055_가장 큰 증가 부분 수열.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="11054_가장 긴 바이토닉 부분 수열.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="1912_연속합.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="2579_계단 오르기.cpp">
+      <Filter>소스 파일\Dynamic programming</Filter>
+    </ClCompile>
+    <ClCompile Include="10799_쇠막대기.cpp">
+      <Filter>소스 파일\Stack,Queue,Deque</Filter>
+    </ClCompile>
+    <ClCompile Include="1874_스택 수열.cpp">
+      <Filter>소스 파일\Stack,Queue,Deque</Filter>
+    </ClCompile>
+    <ClCompile Include="10808_알파벳 개수.cpp">
+      <Filter>소스 파일\Stack,Queue,Deque</Filter>
+    </ClCompile>
+    <ClCompile Include="10809_알파벳 찾기.cpp">
+      <Filter>소스 파일\Stack,Queue,Deque</Filter>
+    </ClCompile>
+    <ClCompile Include="11655_ROT13.cpp">
+      <Filter>소스 파일\Stack,Queue,Deque</Filter>
+    </ClCompile>
+    <ClCompile Include="10824_네 수.cpp">
+      <Filter>소스 파일\Stack,Queue,Deque</Filter>
+    </ClCompile>
+    <ClCompile Include="11656_접미사 배열.cpp">
+      <Filter>소스 파일\Stack,Queue,Deque</Filter>
+    </ClCompile>
+    <ClCompile Include="2089_-2진수.cpp">
+      <Filter>소스 파일\math</Filter>
+    </ClCompile>
+    <ClCompile Include="2609_최대공약수와 최소공배수.cpp">
+      <Filter>소스 파일\math</Filter>
+    </ClCompile>
+    <ClCompile Include="1934_최소공배수.cpp">
+      <Filter>소스 파일\math</Filter>
+    </ClCompile>
+    <ClCompile Include="9613_GCD합.cpp">
+      <Filter>소스 파일\math</Filter>
+    </ClCompile>
+    <ClCompile Include="11005_진법 변환2.cpp">
+      <Filter>소스 파일\math</Filter>
+    </ClCompile>
+    <ClCompile Include="2745_진법 변환.cpp">
+      <Filter>소스 파일\math</Filter>
+    </ClCompile>
+    <ClCompile Include="1373_2진수 8진수.cpp">
+      <Filter>소스 파일\math</Filter>
+    </ClCompile>
+    <ClCompile Include="1212_8진수 2진수.cpp">
+      <Filter>소스 파일\math</Filter>
+    </ClCompile>
+    <ClCompile Include="1978_소수 찾기.cpp">
+      <Filter>소스 파일\math</Filter>
+    </ClCompile>
+    <ClCompile Include="1676_팩토리얼 0의 개수.cpp">
+      <Filter>소스 파일\math</Filter>
+    </ClCompile>
+    <ClCompile Include="11650_좌표 정렬하기.cpp">
+      <Filter>소스 파일\sort</Filter>
+    </ClCompile>
+    <ClCompile Include="1786_찾기_문자열 매칭.cpp">
+      <Filter>소스 파일\문자열 매칭</Filter>
+    </ClCompile>
+    <ClCompile Include="gui_calendar.cpp">
+      <Filter>소스 파일\etc</Filter>
+    </ClCompile>
+    <ClCompile Include="알고리즘과제1.cpp">
+      <Filter>소스 파일\sort</Filter>
+    </ClCompile>
+    <ClCompile Include="알고리즘과제2.cpp">
+      <Filter>소스 파일\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="11657_타임머신.cpp">
+      <Filter>소스 파일\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="알고리즘과제3.cpp">
+      <Filter>소스 파일\math</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Text.txt">
+      <Filter>리소스 파일</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
