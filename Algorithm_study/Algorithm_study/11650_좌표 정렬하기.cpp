@@ -3,6 +3,33 @@
 #include <string.h>
 #include <algorithm>
 #include <math.h>
+#include <vector>
+
+#define _CRT_SECURE_NO_WARNINGS
+#define max(a,b) (((a)>(b))?(a):(b))
+#define min(a,b) (((a)<(b))?(a):(b))
+using namespace std;
+
+int main() {
+	int n;
+	scanf("%i", &n);
+	vector<pair<int, int>> a(n);
+
+	for (int i = 0; i < n; i++) {
+		scanf("%i %i", &a[i].first, &a[i].second);
+	}
+	sort(a.begin(), a.end());
+	for (int i = 0; i < a.size(); i++) {
+		printf("%i %i\n", a[i].first, a[i].second);
+	}
+}
+
+/*
+#include <iostream>
+#include <string>
+#include <string.h>
+#include <algorithm>
+#include <math.h>
 
 #define _CRT_SECURE_NO_WARNINGS
 #define max(a,b) (((a)>(b))?(a):(b))
@@ -26,3 +53,4 @@ int main()
 	}
 	return 0;
 }
+*/
