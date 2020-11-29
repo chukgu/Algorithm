@@ -1,8 +1,8 @@
-# deque
-
 lst_str = ['kang','yong','hun']
 lst_num = [1,2,3]
 lst = [str(i) for i in lst_num] #int형 리스트를 str형으로 바꿈
+matrix = [[0 for col in range(2)] for row in range(3)]#3행 2열 리스트 생성 (모두 (0,0) 인 상태)
+matrix = [[row,col] for col in range(4) for row in range(3)]#4행 3열 좌표 리스트 생성((0,0)부터 (2,3)까지)
 #zip
 list(zip(lst_num, lst_str)) # [(1,'kang'), (2,'yong'), (3,'hun')]
 for n,v in zip (lst_num, lst_str): #풀어서 썼을 때
@@ -51,6 +51,50 @@ counter.update(list2)
 print(counter) #Counter({'a':2, 'b':3, 'c':1})
 
 print(counter.most_common(n=2)) #가장 많이 나타난 2개 출력 - [('b',3), ('a',2)]
+
+#deque (collections 모듈) - 스택과 큐의 기능을 모든 가짐
+#deque는 list보다 속도도 더 빠름(오른쪽은 미세하게 빠르고, left는 훨씬 빠름)
+from collections import deque
+dq = deque() #빈 큐 만들기
+dq = deque([1,2,3]) #원소가 있는 큐
+dq = deque('love') #['l','o','v','e']
+dq = deque(maxlen=5)#큐 최대 길이(원소가 더 많아지면 maxlen 자동 갱신 됨)
+
+dq.append('m') #오른쪽 끝에 항목 추가
+dq.pop()#오른쪽 끝에 항목 가져오면서 삭제
+dq.appendleft('l')#왼쪽에서 'l' 입력
+dq.popleft()#왼쪽 끝에서 항목 가져오면서 삭제
+dq.extend('you')#오른쪽으로 확장 (['l','o','v','e','y','o','u'])
+dq.extendleft('l')#왼쪽으로 확장
+dq.reverse()#내용을 좌우 반전 ['l','o','v','e'] -> ['e','v','o','l']
+dq.rotate()#가장 오른쪽 데이터를 pop해서 appendleft 함 -> ['e','l','o','v']
+dq.rotate(2)#인자 수 만큼 회전 ['l','o','v','e'] -> ['v','e','l','o']
+dq.clear()#모든 원소 삭제
+dq.count(x)#원소 중 x의 개수 리턴
+len(dq)#원소 수 알아내기
+#list 처럼 사용(deque)
+dq[2]='n' #['l','o','v','e'] -> ['l','o','n','e']
+dq.insert(0,'k')#첫번 째 항목에 'k' 추가
+dq.remove('k')#'k'항목 삭제
+dq.copy()#deque의 *shallow copy(얕은 복사)를 만듬
+
+#shallow copy // deep copy 차이
+#shallow copy(얕은 복사)
+# - 값에 대한 메모리가 더 할당되는 것이 아닌 기존 값의 메모리 주소를 공유
+# - list의 경우 리스트 자체뿐만 아니라 리스트 내 요소들도 같은 주소를 공유
+foo = [0,1,2]
+bar = foo
+foo[0] = 9 #bar - [9,1,2]
+id(foo), id(bar) #동일한 주소 값이 나옴
+
+#deep copy(깊은 복사)
+import copy
+foo = [0,1,2]
+bar = copy.deepcopy(foo)
+foo[0]=123 #foo - [123,1,2] // bar - [0,1,2]
+id(foo), id(bar) #주소값이 다름
+
+
 
 #순열 - nPr = n * (n-1) * ... * (n-r+1)
 from itertools import permutations
