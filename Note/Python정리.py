@@ -95,7 +95,6 @@ foo[0]=123 #foo - [123,1,2] // bar - [0,1,2]
 id(foo), id(bar) #주소값이 다름
 
 
-
 #순열 - nPr = n * (n-1) * ... * (n-r+1)
 from itertools import permutations
 items = ['A','B','C','D']
