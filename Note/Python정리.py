@@ -1,3 +1,8 @@
+#string reverse
+s = 'Reverse'
+reversed(s)#esreveR
+s[::-1]#esreveR
+
 lst_str = ['kang','yong','hun']
 lst_num = [1,2,3]
 lst = [str(i) for i in lst_num] #int형 리스트를 str형으로 바꿈
@@ -8,9 +13,18 @@ list(zip(lst_num, lst_str)) # [(1,'kang'), (2,'yong'), (3,'hun')]
 for n,v in zip (lst_num, lst_str): #풀어서 썼을 때
     print(n,v) # 1, 'kang' -> 2, 'yong' -> 3, 'hun'
 
-#lambda
-a = [(1, 2), (0, 1), (5, 1), (5, 2), (3, 0)]
+#List Comprehension
+[n*2 for n in range(1, 10+1) if n%2 == 1] # 홀수인 경우 2를 곱해 출력 [2,6,10,14,18]
+
+#Dictionary Comprehension
 dic = {'kang':112, 'yong':234, 'hun':183}
+a = {key:value for key, value in dic.items()} #아래와 동일한 코드
+# a = {}
+# for key, value in dic.items():
+#   a[key] = value
+
+#lambda
+a =[(1, 2), (0, 1), (5, 1), (5, 2), (3, 0)]
 sorted(a, key=lambda x:x[1]) #첫번째 인자 기준 오름차순
 sorted(a, key=lambda x:(x[0], -x[1]))#첫번 째 인자 기준 오름차순, 두번 째 인자 기준 내림차순
 sorted(dic.items())#key 값 기준 정렬
@@ -36,7 +50,7 @@ sum_ab = list(map(lambda x,y:x+y, a,b)) #[11,22,33,44]
 # count
 list1 = ['a','b','b']
 list2 = ['a','b','c']
-list1.count('a') #2
+list1.count('a') #1
 
 a = 'BlackMask'
 a.count('k')#2
@@ -45,7 +59,7 @@ a.count('k',2,5)#1 (2~5 사이에 개수)
 # Counter 함수
 from collections import Counter
 counter = Counter(list1)
-print(counter) #Counter({'a':2, 'b':1})
+print(counter) #Counter({'a':1, 'b':2})
 
 counter.update(list2)
 print(counter) #Counter({'a':2, 'b':3, 'c':1})
@@ -70,7 +84,7 @@ dq.reverse()#내용을 좌우 반전 ['l','o','v','e'] -> ['e','v','o','l']
 dq.rotate()#가장 오른쪽 데이터를 pop해서 appendleft 함 -> ['e','l','o','v']
 dq.rotate(2)#인자 수 만큼 회전 ['l','o','v','e'] -> ['v','e','l','o']
 dq.clear()#모든 원소 삭제
-dq.count(x)#원소 중 x의 개수 리턴
+dq.count('x')#원소 중 'x'의 개수 리턴
 len(dq)#원소 수 알아내기
 #list 처럼 사용(deque)
 dq[2]='n' #['l','o','v','e'] -> ['l','o','n','e']
@@ -94,8 +108,7 @@ bar = copy.deepcopy(foo)
 foo[0]=123 #foo - [123,1,2] // bar - [0,1,2]
 id(foo), id(bar) #주소값이 다름
 
-
-#순열 - nPr = n * (n-1) * ... * (n-r+1)
+##순열 - nPr = n * (n-1) * ... * (n-r+1)
 from itertools import permutations
 items = ['A','B','C','D']
 list(map(''.join, permutations(items))) #item의 모든 원소를 가지고 순열을 만듬
@@ -115,7 +128,6 @@ a=[1,2,3]
 b=['a','b','c']
 list(product(a,b)) #[(1,'a'), (1,'b'), (1,'c'), .... , (3,'c')]
 
-
 # 최대 공약수, 최소 공배수
 from math import gcd
 x = 2
@@ -124,3 +136,11 @@ gcd(x,y) #최대 공약수
 
 x * y // gcd(x,y) #최소 공배수 (// - 몫(나누기 후 소수 이하 버림))
 # 참고 : ** - 거듭제곱
+
+divmod(5,3) #몫과 나머지를 한 번에 구할 때 (1,2)
+
+import math
+math.ceil(12.2)#올림 - 13
+math.floor(12.2)#내림 - 12
+math.trunc(12.6)#버림 - 12
+round(0.466666, 4)#4번째 자리에서 반올림 - 0.4667
