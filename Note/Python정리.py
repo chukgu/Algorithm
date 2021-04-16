@@ -1,3 +1,19 @@
+#input 시간 초과 나는 경우
+import sys
+input = sys.stdin.readline
+
+#python 재귀 사용 시 기본 깊이 제한은 1000임. 그런 경우 아래와 같이 제한을 늘릴 수 있음
+sys.setrecursionlimit(100000)
+
+#python 3.6 이하는 dict 사용 시 입력 순서 유지 X
+collections.OrderedDict()
+#python 3.7 이상은 입력 순서 유지 O
+
+#python에서는 존재하지 않는 Key 를 조회하면 KeyError 가 발생함
+collections.defaultdict(list)
+collections.defaultdict(int)#를 사용하면 존재하지 않는 키를 조회할 경우, 디폴트 값 기준으로 해당 키에 대한 딕셔너리 아이템을 생성해준다.
+#Ex) dict a에 {'A':5, 'B':4} 가 있을 때, a['C'] += 1 하면 에러가 아닌 {'A':5, 'B':4, 'C':1} 이 추가 됨.
+
 #string reverse
 s = 'Reverse'
 reversed(s)#esreveR
@@ -119,8 +135,10 @@ for i in list(permutations(items,2)):#풀어서 썼을 때
 
 #조합 - 순서대로 나열 X, 뽑기만 하는 경우 (nCr = n! / r!(n-r)!)
 from itertools import combinations
-list(map(''.join, combinations(items,1))) #조합은 수도 반드시 넘겨야 함
+list(map(''.join, combinations(items,1))) #조합은 수도 반드시 넘겨야 함(List가 문자열인 경우)
 list(map(''.join, combinations(items,2))) #['AB','AC' ...]
+list(combinations(items,2)) #list가 숫자이면 이렇게도 가능. 다만, [(0, 1), (0, 2), (1, 2)] 외부는 리스트, 내부는 튜플 형태
+
 
 #곱집합 - 여러 집합들 간에 하나씩 뽑아 조합을 만들 수 있는 모든 수를 말함
 from itertools import product
@@ -167,5 +185,49 @@ capitalize(), title()
 # 문자열 대치 'a'를 'b'로 바꾸는데 2번째까지만 바꿈
 replace('a','b',2)
 
-#아래 주소는 하나씩 찾아보고 따라해보기
-https://goldfishhead.tistory.com/101?category=808053
+#비트연산
+bin(13) #10진수 13을 2진수로 변환 '0b1101'
+int('1101', 2) #2진수로 된 문자열 1101을 10진수로 변환
+
+bin(0b1101 & 0b1001)    # 비트 AND => '0b1001'
+13 & 9                  # 비트 AND => 9
+bin(0b1101 | 0b1001)    # 비트 OR  => '0b1101'
+13 | 9                  # 비트 OR  => 13
+bin(0b1101 ^ 0b1001)    # 비트 XOR => '0b100'
+13 ^ 9                  # 비트 XOR => 4
+bin(~0b1101)            # 비트 NOT => '-0b1110'
+~13                     # 비트 NOT => -14
+
+0b0011 << 2    # 비트를 왼쪽으로 2번 시프트 => '0b1100' (=12)
+0b1100 >> 2    # 비트를 오른쪽으로 2번 시프트 => '0b11' (3)
+
+#a &= b (a와 b의 비트를 AND 연산한 후 결과를 a에 할당)
+#a |= b (a와 b의 비트를 OR 연산한 후 결과를 a에 할당)
+#a ^= b (a와 b의 비트를 XOR 연산한 후 결과를 a에 할당)
+#a <<= b(a의 비트를 b번 왼쪽으로 이동시킨 후 결과를 a에 할당)
+#a >>= b(a의 비트를 b번 오른쪽으로 이동시킨 후 결과를 a에 할당)
+
+
+#집합 자료형 (set - 순서가 없고, 중복이 불가능함)
+s1 = {1,2,3,4,5}
+#값 추가
+s1.add(6) #{1,2,3,4,5,6}
+#다중 값 추가
+s1.update([7,8,9]) #{1,2,3,4,5,6,7,8,9}
+#삭제
+s1.remove(9) #{1,2,3,4,5,6,7,8}
+
+s1 = {1,2,3,4,5}
+s2 = {4,5,6,7}
+#set 합집합
+s1 | s2 #{1,2,3,4,5,6,7}
+s1.union(s2) #{1,2,3,4,5,6,7}
+#set 교집합
+s1 & s2 #{4,5}
+s1.intersection(s2) #{4,5}
+#set 차집합
+s1 - s2 #{1,2,3}
+s1.difference(s2) #{1,2,3}
+#set 대칭 차집합
+s1 ^ s2 #{1,2,3,6,7}
+s1.symmetric_difference(s2) #{1,2,3,6,7}
