@@ -108,6 +108,63 @@ dq.insert(0,'k')#첫번 째 항목에 'k' 추가
 dq.remove('k')#'k'항목 삭제
 dq.copy()#deque의 *shallow copy(얕은 복사)를 만듬
 
+#PriroityQueue (우선순위 큐 - 우선순위가 가장 높은 데이터를 먼저 삭제하는 자료구조)
+#리스트는 삽입시간 O(1) 과 삭제시간 O(N) 이지만, 힙을 이용하면 삽입시간 O(logN) 삭제시간 O(logN)을 유지할 수 있다
+from queue import PriorityQueue
+que = PriorityQueue() #빈 우선순위 큐 만들기
+que = PriorityQueue(maxsize=8)#최대 길이 설정
+que.put(4)
+que.put(1)
+que.put(7)
+que.put(3)
+que.get()#1
+que.get()#3
+que.get()#4
+que.get()#7
+
+que.put((3, 'Apple'))
+que.put((1, 'Banana'))
+que.put((2, 'Cherry'))
+print(que.get()[1])  # Banana
+print(que.get()[1])  # Cherry
+print(que.get()[1])  # Apple
+
+que.qsize()#큐 사이즈 반환
+que.empty()#큐가 비어있으면 True, 아니면 False 반환
+que.full()#큐가 가득차있으면 True, 아니면 False 반환
+
+#Heapq - 우선순위 큐 활용을 위한 heapq (힙이란 원래 완전이진트리를 기본으로 한 자료구조)
+#python 에서의 heapq 모듈을 최소 힙 자료구조를 제공(최대 힙 X)
+import heapq
+lst = [4,1,7,3,8,5]
+heapq.heapify(lst)#[1,3,5,4,8,7] - heapify() 함수를 활용하면 기존의 List도 최소 힙 정렬을 유지하는 힙(리스트)
+
+heap = [] #python에서의 최소 힙 생성은 따로 없으며, 그냥 List를 생성하여 활용하면 됨
+heapq.heappush(heap, 4)
+heapq.heappush(heap, 1)
+heapq.heappush(heap, 7)
+heapq.heappush(heap, 3)#[1,3,7,4] - 이진트리구조로 데이터가 들어가 있음
+heapq.heappop(heap)#1
+heap[0]#최소 값을 삭제하지 않고 단순히 읽기만 할 때
+#K번째 최소값이나 최대값을 효율적으로 구할 수 있음 - K번째 최소값을 구하기 위해서는 heappop() 함수를 K번 호출하면 됨
+
+nums = [4,1,7,3,8,5]
+for num in nums:
+    heapq.heappush(heap, (-num, num)) # (우선 순위, 값) - heapq 모듈은 최소 힙 기능만 있어서 최대 힙(max heap)으로 활용하려면 - 값의 튜플을 활용
+
+while heap:
+    heapq.heappop((heap)[1]) # index 1출력
+
+#2가지 이상의 값을 넣어야할 때는 튜플을 이용하면 됨
+heapq.heappush(heap, (1,0))
+heapq.heappush(heap, (2,8))
+heapq.heappush(heap, (2,1))
+heapq.heappush(heap, (4,7))
+heapq.heappush(heap, (2,9))
+heapq.heappush(heap, (8,3))
+heapq.heappush(heap, (8,1))
+heapq.heappop(heap)#(1,0), (2,1), (2,8), (2,9), (4,7), (8,1), (8,3)
+
 #shallow copy // deep copy 차이
 #shallow copy(얕은 복사)
 # - 값에 대한 메모리가 더 할당되는 것이 아닌 기존 값의 메모리 주소를 공유
