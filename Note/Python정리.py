@@ -5,9 +5,9 @@ input = sys.stdin.readline
 #python 재귀 사용 시 기본 깊이 제한은 1000임. 그런 경우 아래와 같이 제한을 늘릴 수 있음
 sys.setrecursionlimit(100000)
 
-#python 3.6 이하는 dict 사용 시 입력 순서 유지 X
-collections.OrderedDict()
 #python 3.7 이상은 입력 순서 유지 O
+collections.OrderedDict()#python 3.6 이하는 dict 사용 시 입력 순서 유지 X
+
 
 #python에서는 존재하지 않는 Key 를 조회하면 KeyError 가 발생함
 collections.defaultdict(list)
