@@ -8,7 +8,6 @@ sys.setrecursionlimit(100000)
 #python 3.7 이상은 입력 순서 유지 O
 collections.OrderedDict()#python 3.6 이하는 dict 사용 시 입력 순서 유지 X
 
-
 #python에서는 존재하지 않는 Key 를 조회하면 KeyError 가 발생함
 collections.defaultdict(list)
 collections.defaultdict(int)#를 사용하면 존재하지 않는 키를 조회할 경우, 디폴트 값 기준으로 해당 키에 대한 딕셔너리 아이템을 생성해준다.
@@ -244,7 +243,19 @@ replace('a','b',2)
 
 #비트연산
 bin(13) #10진수 13을 2진수로 변환 '0b1101'
+bin(42) # '0b101010'
+oct(42) # '0o52'
+hex(42) # '0x2a'
 int('1101', 2) #2진수로 된 문자열 1101을 10진수로 변환
+int('0o52', 8) #42
+int('0x2a', 16) #42
+# format() 내장 함수를 이용하면 숫자를 다른 진수의 문자열로 바꿀 때 접두어를 제외할 수 있음
+format(42, 'b') # 2진수 -> '101010'
+format(42, '#b') # 2진수 -> '0b101010' <= 두 번째 인자 앞에 # 붙이면 접두어 포함 됨
+format(42, 'o') # 8진수 -> '52'
+format(42, 'x') # 16진수 -> '2a'
+format(42, 'X') # 16진수 -> '2A'
+format(42, 'd') # 10진수 -> '42'
 
 bin(0b1101 & 0b1001)    # 비트 AND => '0b1001'
 13 & 9                  # 비트 AND => 9
